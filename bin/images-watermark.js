@@ -106,7 +106,8 @@ function startup() {
      */
     function verify(program) {
         let config;
-        if (program.config && existSync(program.config)) {
+        program.config = program.config || "images-watermark.config.js";
+        if (existSync(program.config)) {
             config = require(program.config);
             if (config.image && config.text) {
                 excute(config);
