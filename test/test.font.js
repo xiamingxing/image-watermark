@@ -24,14 +24,8 @@ describe("font 库测试", () => {
         expect(all().length).to.be.above(0)
     });
 
-    if (is("MacOS")) {
-        it("华文黑体的路径是", () => {
-            expect(resolveSystemFontPath("华文黑体")[0]).to.equal("/Library/Fonts/华文黑体.ttf");
-        });
-    }
-
-    it("华文黑体应该包含汉字'测试'", () => {
-        expect(contain(resolveSystemFontPath("华文黑体")[0], "测试")).to.be.ok;
+    it("宋体应该包含汉字'测试'", () => {
+        expect(contain(resolveSystemFontPath("宋体")[0], "测试")).to.be.ok;
     });
 
     it("Arial不包含汉字'测试'", () => {
