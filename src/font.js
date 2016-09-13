@@ -44,7 +44,6 @@ let system = () => {
         if (_type == type) {
             system = _system;
         }
-        ;
     });
     return system;
 };
@@ -90,6 +89,7 @@ let contain = (fontpath, fontchar) => {
         return false;
     }
     catch (e) {
+        console.log(e);
         return false;
     }
 };
@@ -150,5 +150,5 @@ let resolveSystemFontPath = (fontname) => {
  *
  * @type {{resolveSystemFontPath: ((p1?:*)), contain: ((p1?:*, p2?:*))}}
  */
-module.exports = {resolveSystemFontPath, contain, all};
+module.exports = {resolveSystemFontPath, contain, all, is};
 
