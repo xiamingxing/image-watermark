@@ -89,7 +89,6 @@ let contain = (fontpath, fontchar) => {
         return false;
     }
     catch (e) {
-        console.log(e);
         return false;
     }
 };
@@ -123,6 +122,15 @@ let all = () => {
 /**
  *
  * @param fontname
+ * @returns {boolean}
+ */
+let has = (fontname) => {
+    return all().some(fontpath => fontpath.indexOf(fontname) > -1);
+};
+
+/**
+ *
+ * @param fontname
  * @returns {*}
  */
 let resolveSystemFontPath = (fontname) => {
@@ -150,5 +158,5 @@ let resolveSystemFontPath = (fontname) => {
  *
  * @type {{resolveSystemFontPath: ((p1?:*)), contain: ((p1?:*, p2?:*))}}
  */
-module.exports = {resolveSystemFontPath, contain, all, is};
+module.exports = {resolveSystemFontPath, contain, all, is, has};
 
